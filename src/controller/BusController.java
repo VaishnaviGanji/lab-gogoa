@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Bus;
+import services.*;
+
 @WebServlet(urlPatterns= {"/bus"})
 public class BusController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +31,7 @@ public class BusController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*
+
 		
 			int numberOfPersons=Integer.parseInt(request.getParameter("persons"));
 		String bustype=request.getParameter("bustype");
@@ -58,7 +61,7 @@ public class BusController extends HttpServlet {
 		
 		LocalDate start=LocalDate.parse(date);				
 	
-		Bus bus=new Bus(numberOfPersons,rates,bustype,start);
+		Bus bus=new Bus(numberOfPersons, bustype, rates, start);
 		bus.setNoOfPersons(numberOfPersons);
 		bus.setRates(rates);
 		bus.setBusType(bustype);
@@ -72,6 +75,6 @@ public class BusController extends HttpServlet {
 		request.setAttribute("busfare", rate);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/busView.jsp");
 		dispatcher.forward(request, response);
-*/	}
+	}
 	
 }
